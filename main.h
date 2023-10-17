@@ -16,7 +16,7 @@ int _put_hexa(long a, int counter, char *buf);
 int _put_hexa_cap(long a, int counter, char *buf);
 int _put_i(long a, int counter, char *buf);
 int _put_bi(unsigned int a, int counter, char *buf);
-int _put_unsigned(long a, int counter, char *buf);
+int _put_uunsigned(long a, int counter, char *buf);
 int _put_S(char *a, int counter, char *buf);
 int put_addr(const void *s, int counter, char *buf);
 int _put_hdecimal(short int a, int counter, char *buf);

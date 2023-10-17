@@ -22,7 +22,7 @@ int put_next_hndl(va_list specifier, char *format, char *buffer, int counter)
 					format++;
 					break;
 				case 'u':
-					counter = _put_unsigned(va_arg(specifier, long), counter, buffer);
+					counter = _put_uunsigned(va_arg(specifier, long), counter, buffer);
 					format++;
 					break;
 				case 'o':
@@ -45,4 +45,3 @@ int put_next_hndl(va_list specifier, char *format, char *buffer, int counter)
 	}
 	return (counter);
 }
-

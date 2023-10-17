@@ -10,9 +10,6 @@
 int _put_rot(char *s, char *buff, int counter)
 {
 
-	int i, j;
-	char *rott = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char *ROTT = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	char *a;
 	char *b;
 	int i = 0;
@@ -20,28 +17,24 @@ int _put_rot(char *s, char *buff, int counter)
 
 	if (!s)
 	{
-		counter = _puts("(null)", buff, counter);
 		return (counter);
 	}
 	a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	b = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 
-	i = 0;
 	while (s[i] != '\0')
 	{
 		j = 0;
-		while (rott[j] != '\0')
+		while (a[j] != '\0')
 		{
-			if (s[i] == rott[j])
+			if (s[i] == a[j])
 			{
-				s[i] = ROTT[j];
-				break;
+				counter = _putchar(b[j], buff, counter);
 			}
 			j++;
 		}
 		i++;
 	}
-	counter = _puts(s, buff, counter);
 	return (counter);
 }

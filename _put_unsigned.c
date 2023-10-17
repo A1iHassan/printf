@@ -7,7 +7,7 @@
  * @buf: buffer
  * Return: counter
  */
-int _put_unsigned(long a, int counter, char *buf)
+int _put_uunsigned(long a, int counter, char *buf)
 {
 	if (a > 9)
 		counter = _put_decimal(a / 10, counter, buf);
