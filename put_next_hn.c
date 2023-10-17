@@ -23,7 +23,7 @@ int put_next_hn(va_list specifier, char *format, char *buffer, int counter)
 					format++;
 					break;
 				case 'u':
-					counter = _put_hunsigned(va_arg(specifier, int), counter, buffer);
+					counter = _put_hunsigne(va_arg(specifier, int), counter, buffer);
 					format++;
 					break;
 				case 'o':

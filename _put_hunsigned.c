@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * _put_hunsigned - unsigned num
+ * _put_hunsigne - unsigned num
  * @a: num
  * @counter: counter
  * @buf: buffer
  * Return: counter
  */
-int _put_hunsigned(short int a, int counter, char *buf)
+int _put_hunsigne(short int a, int counter, char *buf)
 {
 	if (a > 9)
 	{

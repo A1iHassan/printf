@@ -16,7 +16,7 @@ int put_next_edit(va_list specifier, char *format, char *buffer, int counter)
 			format++;
 			break;
 		case 'u':
-			counter = _put_uunsigned(va_arg(specifier, unsigned int), counter, buffer);
+			counter = _put_uunsigne(va_arg(specifier, unsigned int), counter, buffer);
 			format++;
 			break;
 		case 'S':

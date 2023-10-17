@@ -3,7 +3,8 @@
  * put_next_hndl - handle speci
  * @format: format string
  * @specifier: the speci
- * buffer: the buffer
+ * @buffer: the buffer
+ * @counter: counter
  * Return: the counter
  */
 int put_next_hndl(va_list specifier, char *format, char *buffer, int counter)
@@ -11,7 +12,7 @@ int put_next_hndl(va_list specifier, char *format, char *buffer, int counter)
 	switch (*format)
 	{
 		case 'l':
-			switch(*(format + 1))
+			switch (*(format + 1))
 			{
 				case 'd':
 					counter = _put_decimal(va_arg(specifier, long), counter, buffer);
@@ -22,7 +23,7 @@ int put_next_hndl(va_list specifier, char *format, char *buffer, int counter)
 					format++;
 					break;
 				case 'u':
-					counter = _put_uunsigned(va_arg(specifier, long), counter, buffer);
+					counter = _put_uunsigne(va_arg(specifier, long), counter, buffer);
 					format++;
 					break;
 				case 'o':
