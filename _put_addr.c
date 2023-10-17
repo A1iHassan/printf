@@ -11,7 +11,7 @@ int put_addr(const void *s, int counter, char *buf)
 {
 	long ad;
 	long base = 16;
-	long u = ad;
+	long u;
 	long remainder;
 	long num;
 	long i = 0;
@@ -25,6 +25,7 @@ int put_addr(const void *s, int counter, char *buf)
 		return (counter);
 	}
 	ad = (long)s;
+	u = ad;
 	counter = _putchar('0', buf, counter);
 	counter = _putchar('x', buf, counter);
 	do {

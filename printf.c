@@ -32,6 +32,6 @@ int _printf(char *format, ...)
 		}
 		format++;
 	}
-	flush(buff, counter);
+	write(1, buff, counter);
 	return (counter);
 }
