@@ -9,7 +9,7 @@
  */
 int put_addr(const void *s, int counter, char *buf)
 {
-	long ad = (long)s;
+	long ad;
 	long base = 16;
 	long u = ad;
 	long remainder;
@@ -19,6 +19,12 @@ int put_addr(const void *s, int counter, char *buf)
 	char hexnum[] = "0123456789abcdef";
 	char hexad[16];
 
+	if (s == NULL)
+	{
+		counter = _puts("(null)", buf, counter);
+		return (counter);
+	}
+	ad = (long)s;
 	counter = _putchar('0', buf, counter);
 	counter = _putchar('x', buf, counter);
 	do {
