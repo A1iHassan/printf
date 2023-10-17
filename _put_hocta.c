@@ -13,6 +13,11 @@ int _put_hocta(short int a, int counter, char *buf)
 	int j;
 	int arr[12];
 
+	if (a == 0)
+	{
+		counter = _puts("0", buf, counter);
+		return (counter);
+	}
 	while (a > 0)
 	{
 		arr[i] = a % 8;

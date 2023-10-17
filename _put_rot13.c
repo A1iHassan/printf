@@ -3,13 +3,12 @@
 /**
  * *_put_rot - print rot
  * @s: pointer
+ * @buff: buffer pointer
+ * @counter: for checking the return count
  * Return: s
- * @counter: counter
- * @buff: buffer
  */
 int _put_rot(char *s, char *buff, int counter)
 {
-
 	char *a;
 	char *b;
 	int i = 0;
@@ -17,11 +16,11 @@ int _put_rot(char *s, char *buff, int counter)
 
 	if (!s)
 	{
+		counter = _puts("(null)", buff, counter);
 		return (counter);
 	}
 	a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	b = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-
 
 	while (s[i] != '\0')
 	{
@@ -29,9 +28,7 @@ int _put_rot(char *s, char *buff, int counter)
 		while (a[j] != '\0')
 		{
 			if (s[i] == a[j])
-			{
 				counter = _putchar(b[j], buff, counter);
-			}
 			j++;
 		}
 		i++;

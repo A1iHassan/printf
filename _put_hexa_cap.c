@@ -13,6 +13,11 @@ int _put_hexa_cap(long a, int counter, char *buf)
 	int j;
 	int arr[64];
 
+	if (a == 0)
+	{
+		counter = _puts("0", buf, counter);
+		return (counter);
+	}
 	while (a > 0)
 	{
 		arr[i] = a % 16;
