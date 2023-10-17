@@ -8,13 +8,17 @@
  * Return: s
  */
 int _put_rot(char *s, char *buff, int counter)
-
 {
 	char *a;
 	char *b;
 	int i = 0;
 	int j;
 
+	if (!s)
+	{
+		counter = _puts("(null)", buff, counter);
+		return (counter);
+	}
 	a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	b = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
