@@ -12,17 +12,8 @@ int _put_S(char *str, int counter, char *buf)
 {
 	int i;
 
-	do {
-		if (*str == '\0' && (*(str + 1) >= 32 && *(str + 1) < 127))
-		{
-			if (*(str + 1) == '%' && *(str + 2) == 'S')
-				break;
-			counter = _putchar('\\', buf, counter);
-			counter = _putchar('x', buf, counter);
-			counter = _putchar('0', buf, counter);
-			counter = _putchar('0', buf, counter);
-			str++;
-		}
+	while (*str)
+	{
 		if (*str >= 32 && *str < 127)
 		{
 			counter = _putchar(*str, buf, counter);
@@ -39,16 +30,6 @@ int _put_S(char *str, int counter, char *buf)
 			}
 		}
 		str++;
-		if (*str == '\0' && (*(str + 1) >= 32 && *(str + 1) < 127))
-		{
-			if (*(str + 1) == '%' && *(str + 2) == 'S')
-				break;
-			counter = _putchar('\\', buf, counter);
-			counter = _putchar('x', buf, counter);
-			counter = _putchar('0', buf, counter);
-			counter = _putchar('0', buf, counter);
-			str++;
-		}
-	} while (*str);
+	}
 	return (counter);
 }
