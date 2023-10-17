@@ -15,7 +15,7 @@ int _put_hhexa_cap(short int a, int counter, char *buf)
 
 	if (a == 0)
 	{
-		counter == _puts("0", buf, counter);
+		counter = _puts("0", buf, counter);
 		return (counter);
 	}
 	while (a > 0)
