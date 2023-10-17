@@ -3,6 +3,8 @@
 /**
  * *_put_rot - print rot
  * @s: pointer
+ * @buff: buffer pointer
+ * @counter: for checking the return count
  * Return: s
  */
 int _put_rot(char *s, char *buff, int counter)
