@@ -14,8 +14,11 @@ int _printf(char *format, ...)
 	int counter = 0;
 
 	va_start(specifier, format);
-	if (!*format)
-		return (-1);
+	if (!format)
+	{
+		counter = _puts("(null)", buff, counter);
+		return (counter);
+	}
 	while (*format)
 	{
 		if (*format == '%')
