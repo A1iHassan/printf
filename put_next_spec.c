@@ -4,6 +4,7 @@
  * @format: format string
  * @specifier: specifier  to handle it
  * @buffer: the buffer
+ * @counter: the counter
  * Return: the counter
  */
 int put_next_spec(va_list specifier, char *format, char *buffer, int counter)
@@ -19,7 +20,7 @@ int put_next_spec(va_list specifier, char *format, char *buffer, int counter)
 			format++;
 			break;
 		case 'b':
-			counter = _put_bi(va_arg(specifier, int), counter, buffer);
+			counter = _put_bi(va_arg(specifier, unsigned int), counter, buffer);
 			format++;
 			break;
 		case 'o':
