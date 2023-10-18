@@ -16,11 +16,10 @@ int _printf(char *format, ...)
 	int ret;
 
 	va_start(specifier, format);
-	if (!format)
+	if (_strlen(format) == 0 || format == NULL)
 	{
-		counts = _puts("(null)", buff, counts);
-		ret = counts.ret_count;
-		return (ret);
+		write(1, "(null)", 6);
+		return (6);
 	}
 	while (*format)
 	{
