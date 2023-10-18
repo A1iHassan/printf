@@ -10,7 +10,7 @@
 
 cr _puts(char *str, char *buf, cr counter)
 {
-	cr new_counts ,holder;
+	cr new_counts, holder;
 
 	holder = counter;
 	if (!str)

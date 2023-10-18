@@ -2,7 +2,7 @@
 
 /**
  * _put_pers - prints a % sign
- * @counter: counter
+ * @counts: counter
  * @buf: buffer
  * Return: counter
  */

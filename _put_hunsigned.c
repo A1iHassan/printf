@@ -17,6 +17,6 @@ cr _put_hunsigne(short int a, cr counter, char *buf)
 		new_counter = _put_decimal(a / 10, holder, buf);
 		holder = new_counter;
 	}
-	new_counter = _putchar('0' + (a % 10), buf, holder);	
+	new_counter = _putchar('0' + (a % 10), buf, holder);
 	return (new_counter);
 }

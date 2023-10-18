@@ -14,11 +14,13 @@ cr put_next_edit(va_list specifier, char *format, char *buffer, cr counter)
 	switch (*format)
 	{
 		case 'X':
-			new_counter = _put_hexa_cap(va_arg(specifier, unsigned int), counter, buffer);
+			new_counter = _put_hexa_cap(va_arg(specifier, unsigned int),
+					counter, buffer);
 			format++;
 			break;
 		case 'u':
-			new_counter = _put_uunsigne(va_arg(specifier, unsigned int), counter, buffer);
+			new_counter = _put_uunsigne(va_arg(specifier, unsigned int),
+					counter, buffer);
 			format++;
 			break;
 		case 'S':

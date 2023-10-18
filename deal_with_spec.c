@@ -6,7 +6,7 @@
  * @specifier: specifier to handle
  * @format: format string
  * Return: the counter
- * @counter: counter
+ * @counts: counter
  * @buffer: the buffer
  */
 

@@ -7,7 +7,7 @@
  * @buf: bla bla
  * Return: counter
 */
-cr _put_bi(unsigned int a, cr counts, char *buf)
+cr _put_bi(unsigned int a, cr counter, char *buf)
 {
 	cr new_counts, holder;
 
