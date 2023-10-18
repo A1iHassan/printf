@@ -11,7 +11,7 @@ cr _put_bi(unsigned int a, cr counter, char *buf)
 {
 	cr new_counts, holder;
 
-	holder = counts;
+	holder = counter;
 	if (a > 1)
 	{
 		new_counts = _put_bi(a / 2, holder, buf);
