@@ -7,12 +7,16 @@
  * @buf: buffer
  * Return: counter
  */
-int _put_hunsigne(short int a, int counter, char *buf)
+cr _put_hunsigne(short int a, cr counter, char *buf)
 {
+	cr new_counter, holder;
+
+	holder = counter;
 	if (a > 9)
 	{
-		counter = _put_decimal(a / 10, counter, buf);
-		counter = _putchar('0' + (a % 10), buf, counter);
+		new_counter = _put_decimal(a / 10, holder, buf);
+		holder = new_counter;
 	}
-	return (counter);
+	new_counter = _putchar('0' + (a % 10), buf, holder);	
+	return (new_counter);
 }

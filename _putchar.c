@@ -9,14 +9,19 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _putchar(char c, char *buf, int counter)
+cr _putchar(char c, char *buf, cr counts)
 {
-	if (counter == BUFFER_SIZE)
+	cr new_counts;
+
+	if (counts.counter == BUFFER_SIZE)
 	{
-		flush(buf, counter);
-		counter = 0;
+		flush(buf, counts.counter);
+		counts.counter = 0;
 	}
-	buf[counter] = c;
-	counter++;
-	return (counter);
+	buf[counts.counter] = c;
+	counts.counter++;
+	counts.ret_count++;
+	new_counts.counter = counts.counter;
+	new_counts.ret_count = counts.ret_count;
+	return (new_counts);
 }

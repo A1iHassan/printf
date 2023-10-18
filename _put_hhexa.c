@@ -7,12 +7,14 @@
  * @buf: buffer
  * Return: counter
  */
-int _put_hhexa(short int a, int counter, char *buf)
+cr _put_hhexa(short int a, cr counter, char *buf)
 {
+	cr new_counter, holder;
 	int i = 0;
 	int j;
 	int arr[32];
 
+	holder = counter;
 	while (a > 0)
 	{
 		arr[i] = a % 16;
@@ -23,12 +25,14 @@ int _put_hhexa(short int a, int counter, char *buf)
 	{
 		if (arr[j] >= 0 && arr[j] <= 9)
 		{
-			counter = _putchar('0' + arr[j], buf, counter);
+			new_counter = _putchar('0' + arr[j], buf, holder);
+			holder = new_counter;
 		}
 		else
 		{
-			counter = _putchar(arr[j] + 87, buf, counter);
+			new_counter = _putchar(arr[j] + 87, buf, holder);
+			holder = new_counter;
 		}
 	}
-	return (counter);
+	return (new_counter);
 }

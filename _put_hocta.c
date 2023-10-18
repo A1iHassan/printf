@@ -7,16 +7,18 @@
  * @buf: buffer
  * Return: counter
  */
-int _put_hocta(short int a, int counter, char *buf)
+cr _put_hocta(short int a, cr counter, char *buf)
 {
+	cr new_counter, holder;
 	int i = 0;
 	int j;
 	int arr[12];
 
+	holder = counter;
 	if (a == 0)
 	{
-		counter = _puts("0", buf, counter);
-		return (counter);
+		new_counter = _puts("0", buf, holder);
+		return (new_counter);
 	}
 	while (a > 0)
 	{
@@ -26,7 +28,8 @@ int _put_hocta(short int a, int counter, char *buf)
 	}
 	for (j = i - 1; j >= 0; j--)
 	{
-		counter = _putchar('0' + arr[j], buf, counter);
+		new_counter = _putchar('0' + arr[j], buf, holder);
+		holder = counter;
 	}
-	return (counter);
+	return (new_counter);
 }

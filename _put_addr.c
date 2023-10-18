@@ -7,8 +7,9 @@
  * @buf: buffer
  * Return: counter
  */
-int put_addr(const void *s, int counter, char *buf)
+cr put_addr(const void *s, cr counter, char *buf)
 {
+	cr new_counts, holder;
 	long ad;
 	long base = 16;
 	long u;
@@ -19,15 +20,18 @@ int put_addr(const void *s, int counter, char *buf)
 	char hexnum[] = "0123456789abcdef";
 	char hexad[16];
 
+	holder = counter;
 	if (s == NULL)
 	{
-		counter = _puts("(null)", buf, counter);
-		return (counter);
+		new_counts = _puts("(null)", buf, holder);
+		return (new_counts);
 	}
 	ad = (long)s;
 	u = ad;
-	counter = _putchar('0', buf, counter);
-	counter = _putchar('x', buf, counter);
+	new_counts = _putchar('0', buf, holder);
+	holder = new_counts;
+	new_counts = _putchar('x', buf, holder);
+	holder = new_counts;
 	do {
 		remainder = u % base;
 		num = remainder;
@@ -36,7 +40,8 @@ int put_addr(const void *s, int counter, char *buf)
 	} while (u != 0);
 	for (j = i - 1; j >= 0; j--)
 	{
-		counter = _putchar(hexad[j], buf, counter);
+		new_counts = _putchar(hexad[j], buf, holder);
+		holder = new_counts;
 	}
-	return (counter);
+	return (new_counts);
 }

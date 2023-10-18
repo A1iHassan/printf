@@ -7,17 +7,19 @@
  * @counter: for checking the return count
  * Return: s
  */
-int _put_rot(char *s, char *buff, int counter)
+cr _put_rot(char *s, char *buff, cr counter)
 {
+	cr new_counter, holder;
 	char *a;
 	char *b;
 	int i = 0;
 	int j;
 
+	holder = counter;
 	if (!s)
 	{
-		counter = _puts("(null)", buff, counter);
-		return (counter);
+		new_counter = _puts("(null)", buff, counter);
+		return (new_counter);
 	}
 	a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	b = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
@@ -28,10 +30,13 @@ int _put_rot(char *s, char *buff, int counter)
 		while (a[j] != '\0')
 		{
 			if (s[i] == a[j])
-				counter = _putchar(b[j], buff, counter);
+			{
+				new_counter = _putchar(b[j], buff, holder);
+				holder = new_counter;
+			}
 			j++;
 		}
 		i++;
 	}
-	return (counter);
+	return (new_counter);
 }

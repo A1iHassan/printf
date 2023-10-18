@@ -7,12 +7,14 @@
  * @buf: buffer
  * Return: counter
  */
-int _put_plus(long a, int counter, char *buf)
+cr _put_plus(long a, cr counter, char *buf)
 {
+	cr new_counter;
+
 	if (a > 0)
 	{
-		counter = _putchar('+', buf, counter);
+		new_counter = _putchar('+', buf, counter);
 	}
-	counter = _put_i(a, counter, buf);
-	return (counter);
+	new_counter = _put_i(a, counter, buf);
+	return (new_counter);
 }

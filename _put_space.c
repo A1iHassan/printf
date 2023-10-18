@@ -7,13 +7,17 @@
  * @buf: buffer
  * Return: counter
  */
-int _put_space(long a, int counter, char *buf)
+cr _put_space(long a, cr counter, char *buf)
 {
+	cr new_counter, holder;
+
+	holder = counter;
 	if (a > 0)
 	{
-		counter = _putchar(' ', buf, counter);
+		new_counter = _putchar(' ', buf, holder);
+		holder = new_counter;
 	}
-	counter = _put_i(a, counter, buf);
+	new_counter = _put_decimal(a, holder, buf);
 
-	return (counter);
+	return (new_counter);
 }

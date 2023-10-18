@@ -8,17 +8,21 @@
  * Return: counter
  */
 
-int _puts(char *str, char *buf, int counter)
+cr _puts(char *str, char *buf, cr counter)
 {
+	cr new_counts ,holder;
+
+	holder = counter;
 	if (!str)
 	{
-		counter = _puts("(null)", buf, counter);
-		return (counter);
+		new_counts = _puts("(null)", buf, holder);
+		return (new_counts);
 	}
 	while (*str != '\0')
 	{
-		counter = _putchar(*str, buf, counter);
+		new_counts = _putchar(*str, buf, holder);
+		holder = new_counts;
 		str++;
 	}
-	return (counter);
+	return (new_counts);
 }

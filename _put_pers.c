@@ -7,9 +7,11 @@
  * Return: counter
  */
 
-int _put_pers(int counter, char *buf)
+cr _put_pers(cr counts, char *buf)
 {
-	counter = _putchar('%', buf, counter);
+	cr new_counts;
 
-	return (counter);
+	new_counts = _putchar('%', buf, counts);
+
+	return (new_counts);
 }

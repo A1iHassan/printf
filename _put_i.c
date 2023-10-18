@@ -7,13 +7,14 @@
  * @buf: the buffer
  * Return: counter
  */
-int _put_i(long a, int counter, char *buf)
+cr _put_i(long a, cr counter, char *buf)
 {
+	cr new_counter;
 	long *i = &a;
 	long j = *i;
 
-	counter = _put_decimal(j, counter, buf);
+	new_counter = _put_decimal(j, counter, buf);
 
-	return (counter);
+	return (new_counter);
 }
 

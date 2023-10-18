@@ -11,27 +11,32 @@ int _printf(char *format, ...)
 {
 	va_list specifier;
 	char buff[BUFFER_SIZE];
-	int counter = 0;
+	cr counts = {0, 0};
+	int count;
+	int ret;
 
 	va_start(specifier, format);
 	if (!format)
 	{
-		counter = _puts("(null)", buff, counter);
-		return (counter);
+		counts = _puts("(null)", buff, counts);
+		ret = counts.ret_count;
+		return (ret);
 	}
 	while (*format)
 	{
 		if (*format == '%')
 		{
-			counter = deal_with_spec(specifier, (format + 1), buff, counter);
+			counts = deal_with_spec(specifier, (format + 1), buff, counts);
 			format++;
 		}
 		else
 		{
-			counter = _putchar(*format, buff, counter);
+			counts = _putchar(*format, buff, counts);
 		}
 		format++;
 	}
-	write(1, buff, counter);
-	return (counter);
+	count = counts.counter;
+	ret = counts.ret_count;
+	write(1, buff, count);
+	return (ret);
 }

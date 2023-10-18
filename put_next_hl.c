@@ -7,19 +7,21 @@
  * @counter: counter to return num of chars
  * Return: counter
  */
-int put_next_hl(va_list specifier, char *format, char *buffer, int counter)
+cr put_next_hl(va_list specifier, char *format, char *buffer, cr counter)
 {
+	cr new_counter;
+
 	switch (*format)
 	{
 		case '+':
 			switch (*(format + 1))
 			{
 				case 'l':
-					counter = _put_plus(va_arg(specifier, long), counter, buffer);
+					new_counter = _put_plus(va_arg(specifier, long), counter, buffer);
 					format++;
 					break;
 				default:
-					counter = _put_plus(va_arg(specifier, int), counter, buffer);
+					new_counter = _put_plus(va_arg(specifier, int), counter, buffer);
 					format++;
 					break;
 			}
@@ -28,15 +30,15 @@ int put_next_hl(va_list specifier, char *format, char *buffer, int counter)
 			switch (*(format + 1))
 			{
 				case 'l':
-					counter = _put_space(va_arg(specifier, long), counter, buffer);
+					new_counter = _put_space(va_arg(specifier, long), counter, buffer);
 					format++;
 					break;
 				default:
-					counter = _put_space(va_arg(specifier, int), counter, format);
+					new_counter = _put_space(va_arg(specifier, int), counter, format);
 					format++;
 					break;
 			}
 			break;
 	}
-	return (counter);
+	return (new_counter);
 }

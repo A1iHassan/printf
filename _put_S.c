@@ -8,28 +8,35 @@
  * Return: counter
  */
 
-int _put_S(char *str, int counter, char *buf)
+cr _put_S(char *str, cr counter, char *buf)
 {
+	cr new_counter, holder;
 	int i;
 
+	holder = counter;
 	while (*str)
 	{
 		if (*str >= 32 && *str < 127)
 		{
-			counter = _putchar(*str, buf, counter);
+			new_counter = _putchar(*str, buf, holder);
+			holder = new_counter;
 		}
 		else
 		{
 			i = *str;
-			counter = _putchar('\\', buf, counter);
-			counter = _putchar('x', buf, counter);
+			new_counter = _putchar('\\', buf, holder);
+			holder = new_counter;
+			new_counter = _putchar('x', buf, holder);
+			holder = new_counter;
 			if (*str < 0x10)
 			{
-				counter = _putchar('0', buf, counter);
-				counter = _put_hexa_cap(i, counter, buf);
+				new_counter = _putchar('0', buf, holder);
+				holder = new_counter;
+				new_counter = _put_hexa_cap(i, holder, buf);
+				holder = new_counter;
 			}
 		}
 		str++;
 	}
-	return (counter);
+	return (new_counter);
 }

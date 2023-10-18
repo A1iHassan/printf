@@ -7,11 +7,12 @@
  * @buf: buffer
  * Return: counter
  */
-int _put_hi(short int a, int counter, char *buf)
+cr _put_hi(short int a, cr counter, char *buf)
 {
+	cr new_counter;
 	short int *i = &a;
 	short int j = *i;
 
-	counter = _put_decimal(j, counter, buf);
-	return (counter);
+	new_counter = _put_decimal(j, counter, buf);
+	return (new_counter);
 }

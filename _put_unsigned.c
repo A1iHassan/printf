@@ -7,11 +7,17 @@
  * @buf: buffer
  * Return: counter
  */
-int _put_uunsigne(long a, int counter, char *buf)
+cr _put_uunsigne(long a, cr counter, char *buf)
 {
-	if (a > 9)
-		counter = _put_decimal(a / 10, counter, buf);
-	counter = _putchar('0' + (a % 10), buf, counter);
+	cr new_counter, holder;
 
-	return (counter);
+	holder = counter;
+	if (a > 9)
+	{
+		new_counter = _put_decimal(a / 10, holder, buf);
+		holder = new_counter;
+	}
+	new_counter = _putchar('0' + (a % 10), buf, holder);
+
+	return (new_counter);
 }

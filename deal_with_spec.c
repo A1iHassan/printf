@@ -10,27 +10,29 @@
  * @buffer: the buffer
  */
 
-int deal_with_spec(va_list specifier, char *format, char *buffer, int counter)
+cr deal_with_spec(va_list specifier, char *format, char *buffer, cr counts)
 {
+	cr new_counts;
+
 	switch (*format)
 	{
 		case 'c':
-			counter = _putchar(va_arg(specifier, int), buffer, counter);
+			new_counts = _putchar(va_arg(specifier, int), buffer, counts);
 			format++;
 			break;
 		case 's':
-			counter = _puts(va_arg(specifier, char *), buffer, counter);
+			new_counts = _puts(va_arg(specifier, char *), buffer, counts);
 			format++;
 			break;
 		case '%':
-			counter = _put_pers(counter, buffer);
+			new_counts = _put_pers(counts, buffer);
 			format++;
 			break;
 		default:
-			counter = put_next_spec(specifier, format, buffer, counter);
+			new_counts = put_next_spec(specifier, format, buffer, counts);
 			break;
 
 
 	}
-	return (counter);
+	return (new_counts);
 }
