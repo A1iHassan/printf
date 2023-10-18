@@ -16,7 +16,7 @@ cr _put_rot(char *s, char *buff, cr counter)
 	int j;
 
 	holder = counter;
-	if (!s)
+	if (!s || _strlen(s) == 0)
 	{
 		new_counter = _puts("(null)", buff, counter);
 		return (new_counter);
